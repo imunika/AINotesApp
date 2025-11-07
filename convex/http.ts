@@ -2,10 +2,14 @@ import { httpRouter } from "convex/server";
 import { auth } from "./auth";
 import { httpAction } from "./_generated/server";
 import { convertToModelMessages, streamText, tool, UIMessage } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { createOpenAI } from "@ai-sdk/openai";
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { z } from "zod";
 import { internal } from "./_generated/api";
+
+const openai = createOpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const http = httpRouter();
 
