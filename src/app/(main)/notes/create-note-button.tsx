@@ -26,7 +26,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Plus } from "lucide-react";
 import { api } from "../../../../convex/_generated/api";
-import { useAction, useMutation } from "convex/react";
+import { useAction } from "convex/react";
 import { toast } from "sonner";
 
 const noteFormSchema = z.object({
